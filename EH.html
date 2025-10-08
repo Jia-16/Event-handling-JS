@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A spooky story</title>
+        <style>
+            body.dark {
+                color:white;
+                background:black;
+            }
+            button {
+                display:block;
+                margin: 5px;
+            }
+            .textEntry {
+                margin-top: 12px;
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The Closet</h1>
+        <p id="story">Your friend went to hide in the closet for a harmless prank.</p>
+        <button onclick="goDark()">Let's enter the closet!</button>
+        <div class="textEntry">What is your friend's name?: <input type="text" id="name"></div>
+
+        <button onclick="typeAndScream()">You don't want to touch this</button>
+
+        <button onclick="finishTheStory()">What was your friend planning?</button>
+        <script>
+            function typeAndScream() {
+                var personName = document.getElementById("name").value;
+                alert("You find some sticky liquid on the wood of the cupboard. It feels like chewy caramel." +     personName);
+            }
+            function goDark() {
+                document.body.className = "dark";
+            }
+            function finishTheStory() {
+                document.getElementById("story").innerHTML = "You pull back some clothes and find your friend holding a pie dish with whipped cream inside.";
+            }
+        </script>
+        </body>
+</html>
